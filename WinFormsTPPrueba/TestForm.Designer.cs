@@ -245,7 +245,7 @@
             // consultarToolStripMenuItem
             // 
             this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarToolStripMenuItem.Text = "Consultar";
             // 
             // adquirirEntradasToolStripMenuItem

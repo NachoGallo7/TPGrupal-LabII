@@ -22,5 +22,6 @@ namespace WinFormsTPPrueba
             Form1 test = new Form1();
             test.Show();
         }
+
     }
 }
