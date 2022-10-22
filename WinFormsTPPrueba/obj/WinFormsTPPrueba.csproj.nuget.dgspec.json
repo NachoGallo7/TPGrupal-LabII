@@ -1,0 +1,65 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj": {}
+  },
+  "projects": {
+    "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj",
+        "projectName": "WinFormsTPPrueba",
+        "projectPath": "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj",
+        "packagesPath": "C:\\Users\\IVAN\\.nuget\\packages\\",
+        "outputPath": "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\IVAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0-windows7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0-windows7.0": {
+            "targetAlias": "net6.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0-windows7.0": {
+          "targetAlias": "net6.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
