@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj": {}
+    "C:\\Users\\Anahi\\OneDrive\\Escritorio\\TUP\\1 - Primer año\\Semestre 2\\Laboratorio II\\TPI\\Git\\TPGrupal-LabII\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj": {}
   },
   "projects": {
-    "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj": {
+    "C:\\Users\\Anahi\\OneDrive\\Escritorio\\TUP\\1 - Primer año\\Semestre 2\\Laboratorio II\\TPI\\Git\\TPGrupal-LabII\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj",
+        "projectUniqueName": "C:\\Users\\Anahi\\OneDrive\\Escritorio\\TUP\\1 - Primer año\\Semestre 2\\Laboratorio II\\TPI\\Git\\TPGrupal-LabII\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj",
         "projectName": "WinFormsTPPrueba",
-        "projectPath": "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj",
-        "packagesPath": "C:\\Users\\IVAN\\.nuget\\packages\\",
-        "outputPath": "D:\\00Nacho\\Tecnicatura Universitaria en Programacion\\00Materias 2do Cuatrimestre\\3 Laboratorio de Computacion II\\TPI\\Parte_3\\Estructura TPI 3\\WinFormsTPPrueba\\obj\\",
+        "projectPath": "C:\\Users\\Anahi\\OneDrive\\Escritorio\\TUP\\1 - Primer año\\Semestre 2\\Laboratorio II\\TPI\\Git\\TPGrupal-LabII\\WinFormsTPPrueba\\WinFormsTPPrueba.csproj",
+        "packagesPath": "C:\\Users\\Anahi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Anahi\\OneDrive\\Escritorio\\TUP\\1 - Primer año\\Semestre 2\\Laboratorio II\\TPI\\Git\\TPGrupal-LabII\\WinFormsTPPrueba\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\IVAN\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Anahi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
