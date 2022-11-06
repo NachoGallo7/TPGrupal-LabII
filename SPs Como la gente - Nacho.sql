@@ -4,7 +4,7 @@ GO
 --Agregar imagenes a peliculas
 ALTER TABLE PELICULAS
 ADD imagen varbinary(MAX)
-
+GO
 ----Relacionado al Usuario
 --UsuarioExistente
 CREATE PROC SP_USUARIO_EXISTENTE @documento varchar(50), @tipoDoc int=0, @resultado int=0 OUTPUT
@@ -17,22 +17,27 @@ CREATE PROC SP_USUARIO_EXISTENTE @documento varchar(50), @tipoDoc int=0, @result
 		ELSE
 			SET @resultado = 0 --Usuario inexistente
 	END
+GO
 
 --ProximoUsuario
 CREATE PROC SP_PROXIMO_ID_USUARIO @proximoId int OUTPUT
 	AS
+	BEGIN
 	SELECT @proximoId = MAX(id_cliente)+1 FROM CLIENTES
-
+	END
+GO
 --InsertarUsuario
 CREATE PROC SP_INSERTAR_USUARIO @id int, @apellido varchar(50)='testApellido', @nombre varchar(50)='testNombre', 
 								@idTipoCliente int=1, @fechaNac DateTime='1-1-2000', @idTipoDoc int=1, 
 								@nroDoc varchar(50)='123456789', @idCalle int=1, @altura int=1234, @idGenero int=1
 	AS
+	BEGIN
 	INSERT CLIENTES (id_cliente, Apellido_Cliente, Nombre_Cliente, Id_Tipo_Cliente, 
 					 Fecha_Nac, Id_Tipo_Doc, Nro_Doc, Id_Calle, Altura, Id_Genero)
 		VALUES(@id, @apellido, @nombre, @idTipoCliente, @fechaNac, @idTipoDoc, 
 			   @nroDoc, @idCalle, @altura, @idGenero)
-
+	END		   
+GO
 --NombreDeUsuario
 CREATE PROC SP_NOMBRE_DE_USUARIO @documento varchar(50), @tipoDocumento int=0, @nombreSalida varchar(50) OUTPUT
 	AS
@@ -45,7 +50,8 @@ CREATE PROC SP_NOMBRE_DE_USUARIO @documento varchar(50), @tipoDocumento int=0, @
 				WHERE Nro_Doc = @documento AND Id_Tipo_Doc = @tipoDocumento
 		SET @nombreSalida = @resultado
 	END
-
+	
+GO
 --NombreDeCliente
 CREATE PROC SP_NOMBRE_DE_CLIENTE @documento varchar(50), @tipoDocumento int=0, @nombreSalida varchar(50) OUTPUT
 	AS
@@ -53,7 +59,8 @@ CREATE PROC SP_NOMBRE_DE_CLIENTE @documento varchar(50), @tipoDocumento int=0, @
 		SELECT @nombreSalida = nombre_cliente FROM CLIENTES
 			WHERE Nro_Doc = @documento AND Id_Tipo_Doc = @tipoDocumento
 	END
-
+	
+GO
 --NombreDeEmpleado
 CREATE PROC SP_NOMBRE_DE_EMPLEADO @documento varchar(50), @tipoDocumento int=0, @nombreSalida varchar(50) OUTPUT
 	AS
@@ -61,7 +68,7 @@ CREATE PROC SP_NOMBRE_DE_EMPLEADO @documento varchar(50), @tipoDocumento int=0, 
 		SELECT @nombreSalida = nombre_empleado FROM EMPLEADOS
 			WHERE Nro_Doc = @documento AND Id_Tipo_Doc = @tipoDocumento
 	END
-
+GO
 --==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
 ----Cargar Combos
 CREATE PROC SP_CARGAR_COMBO @nombreTabla nvarchar(50)
@@ -71,7 +78,7 @@ CREATE PROC SP_CARGAR_COMBO @nombreTabla nvarchar(50)
 		SET @query = 'SELECT * FROM ' + @nombreTabla
 		EXEC SP_EXECUTESQL @stmt = @query
 	END
-
+GO
 
 --==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
 ----Form de Compras
@@ -86,22 +93,14 @@ CREATE VIEW view_peliculas_detalles
 						 JOIN CALIFICACIONES_ETARIAS ce 
 							ON p.Id_Calificacion_Etaria = ce.Id_Calificacion_Etaria
 						 JOIN IDIOMAS id ON id.Id_Idioma = p.Id_Idioma
-
+GO
 CREATE PROC SP_PELICULAS_DETALLES
 	AS
 	BEGIN
 		SELECT * FROM view_peliculas_detalles
 	END
-EXEC SP_PELICULAS_DETALLES
-
-SELECT * FROM view_peliculas_detalles WHERE tipo_genero_pelicula = 'Musical'
-
-
+GO
 --Funciones de Pelicula
-CREATE PROC SP_FUNCIONES_DETALLES
-	AS
-		SELECT * FROM view_funciones_detalles
-		
 CREATE VIEW view_funciones_detalles
 	AS
 		SELECT f.id_funcion, p.id_pelicula, p.nombre, f.id_sala, s.Capacidad, s.Id_Tipo_Sala, ts.Tipo_Sala,
@@ -110,38 +109,54 @@ CREATE VIEW view_funciones_detalles
 			FROM FUNCIONES f JOIN PELICULAS p ON f.Id_Pelicula = p.Id_Pelicula
 							 JOIN SALAS s ON s.Id_Sala = f.Id_Sala
 							 JOIN TIPOS_SALA ts ON ts.Id_Tipo_Sala = s.Id_Tipo_Sala
-			WHERE f.id_sala = 2
-
+GO
+CREATE PROC SP_FUNCIONES_DETALLES
+	AS
+	BEGIN
+		SELECT * FROM view_funciones_detalles
+	END	
+GO
 --Cargar Salas
-
 CREATE PROC SP_CARGA_SALAS
 	AS
+	BEGIN
 	SELECT id_sala, capacidad, id_tipo_sala
 		FROM SALAS
-
+	END	
+GO
 CREATE PROC SP_CARGA_TIPOSSALA
 	AS
+	BEGIN
 	SELECT id_tipo_sala, tipo_sala
 		FROM TIPOS_SALA
-		
+	END	
+GO
 CREATE PROC SP_CARGA_TIPO_BUTACA
 	AS
+	BEGIN
 	SELECT id_tipo_butaca, tipo_butaca FROM TIPOS_BUTACAS
-
+	END
+GO
 CREATE PROC SP_CARGA_BUTACAS
 	AS
+	BEGIN
 	SELECT id_butaca, id_fila, nro_butaca, id_tipo_butaca, id_sala
 		FROM BUTACAS
-
+	END
+GO
 CREATE PROC SP_CARGA_BUTACAS_FUNCIONES
 	AS
+	BEGIN
 	SELECT bf.id_butaca_funcion, bf.id_butaca, bf.id_funcion, bf.id_reserva, r.Id_Cliente, Fecha_Reserva
 		FROM BUTACAS_FUNCIONES bf LEFT JOIN RESERVAS r ON bf.id_reserva = r.id_reserva;
-
+	END
+GO
 CREATE PROC SP_CARGA_CLIENTES
 	AS
-	SELECT * FROM CLIENTES
-
+	BEGIN
+		SELECT * FROM CLIENTES
+	END
+GO
 CREATE PROC SP_ALTA_COMPRA @inIdCliente int=1, @inIdButaca int, @inIdFuncion int, @inPrecio float, @inReserva BIT=0
 	AS
 	BEGIN
@@ -169,6 +184,7 @@ CREATE PROC SP_ALTA_COMPRA @inIdCliente int=1, @inIdButaca int, @inIdFuncion int
 		END
 	END
 	
+GO
 --==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-==-
 
 /*
